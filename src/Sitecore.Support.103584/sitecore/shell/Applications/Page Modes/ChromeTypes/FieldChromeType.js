@@ -545,24 +545,22 @@
         return;
       }
 
-      if(this.fieldType == "multi-line text")
-      {
-          if (this.parameters["linebreak"] == "br") {
-          e.stop();
-          if (this.fieldType == "multi-line text") {
-            var linebreakTimesParamterName = "linebreak-times";
-            var linebreakTimesParamter = this.parameters[linebreakTimesParamterName];
-            var linebreakTimes = !linebreakTimesParamter || linebreakTimesParamter > 2 ? 0 : linebreakTimesParamter;
-            linebreakTimes++;
-            this.parameters[linebreakTimesParamterName] = linebreakTimes;
-            //Sitecore.Support.103584
-            if (linebreakTimes > 1 && this.fieldType != "multi-line text") {
-              return;
-            }
+      if (this.parameters["linebreak"] == "br") {
+        e.stop();
+        if (this.fieldType == "multi-line text") {
+          var linebreakTimesParamterName = "linebreak-times";
+          var linebreakTimesParamter = this.parameters[linebreakTimesParamterName];
+          var linebreakTimes = !linebreakTimesParamter || linebreakTimesParamter > 2 ? 0 : linebreakTimesParamter;
+          linebreakTimes++;
+          this.parameters[linebreakTimesParamterName] = linebreakTimes;
+          
+          //Sitecore.Support.103584
+          if (linebreakTimes > 1 && this.fieldType != "multi-line text") {
+            return;
           }
+      }
 
-          this._insertLineBreak();
-        }
+        this._insertLineBreak();
       }
     }
   },
