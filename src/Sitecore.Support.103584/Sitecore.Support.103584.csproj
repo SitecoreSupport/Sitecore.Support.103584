@@ -57,11 +57,9 @@
     <None Include="packages.config" />
     <None Include="web.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Website\bin\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Website\sitecore\shell\Applications\Page Modes\ChromeTypes\FieldChromeType.js" />
+    <Content Include="sitecore\shell\Applications\Page Modes\ChromeTypes\FieldChromeType.js" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
